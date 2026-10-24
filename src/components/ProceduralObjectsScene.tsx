@@ -93,7 +93,7 @@ const InteractiveFloatingObject: React.FC<InteractiveObjectProps> = ({
         drag.current.offsetX = e.point.x - base.current.x;
         drag.current.offsetY = e.point.y - base.current.y;
         gl.domElement.style.cursor = 'grabbing';
-        e.target.setPointerCapture(e.pointerId);
+        (e.target as Element).setPointerCapture(e.pointerId);
       }}
       onPointerMove={(e) => {
         if (!drag.current.active) return;

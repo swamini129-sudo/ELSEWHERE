@@ -618,11 +618,6 @@ section[id] { scroll-margin-top: 5.5rem; }
 .mobile-secondary-menu button:hover {
   background: rgba(169, 183, 160, 0.2);
 }
-
-.mobile-bottom-nav {
-  display: none;
-}
-
 @keyframes mobileMenuReveal {
   from {
     opacity: 0;
@@ -635,90 +630,16 @@ section[id] { scroll-margin-top: 5.5rem; }
 }
 
 @media (max-width: 767px) {
-  .mobile-bottom-nav {
-    position: fixed;
-    z-index: 50;
-    right: 12px;
-    bottom: max(10px, env(safe-area-inset-bottom));
-    left: 12px;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 4px;
-    padding: 8px 6px;
-    border: 1px solid rgba(37, 72, 59, 0.13);
-    border-radius: 22px;
-    background: rgba(250, 248, 242, 0.94);
-    -webkit-backdrop-filter: blur(22px) saturate(135%);
-    backdrop-filter: blur(22px) saturate(135%);
-    box-shadow:
-      0 10px 35px rgba(25, 55, 45, 0.12),
-      inset 0 1px 0 rgba(255, 255, 255, 0.85);
-  }
-
-  .mobile-bottom-nav-item {
-    display: flex;
-    min-width: 0;
-    min-height: 54px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3px;
-    border-radius: 15px;
-    color: #657067;
-    font-size: 10px;
-    font-weight: 600;
-    transition:
-      color 180ms ease,
-      background-color 180ms ease,
-      transform 180ms ease;
-  }
-
-  .mobile-bottom-nav-icon {
-    display: grid;
-    place-items: center;
-    width: 28px;
-    height: 26px;
-  }
-
-  .mobile-bottom-nav-item.is-active {
-    color: #25483B;
-    background: rgba(169, 183, 160, 0.26);
-  }
-
-  .mobile-bottom-nav-item:active {
-    transform: scale(0.96);
-  }
-
   /* Keep page content and footer above the fixed navigation. */
   /* Keep the last item visible above the fixed mobile navigation. */
 html {
   min-height: 100%;
 }
-
-body {
-  padding-bottom: calc(120px + env(safe-area-inset-bottom)) !important;
 }
-
-#root {
-  min-height: 100%;
-}
-
-@media (max-width: 767px) {
-  .mobile-bottom-nav {
-    bottom: calc(12px + env(safe-area-inset-bottom));
-  }
-
-  body {
-    padding-bottom: calc(140px + env(safe-area-inset-bottom)) !important;
-  }
-}
-
   .mobile-secondary-menu {
     max-height: min(55vh, 360px);
     overflow-y: auto;
   }
-}
-
 button:focus-visible,
 a:focus-visible {
   outline: 3px solid rgba(155, 101, 75, 0.8);

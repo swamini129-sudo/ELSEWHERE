@@ -5,7 +5,6 @@ import {
   X,
   Sparkles,
   PlusCircle,
-  Home,
   Search,
   LayoutGrid,
 } from 'lucide-react';
@@ -31,14 +30,6 @@ export const Navbar: React.FC<Props> = ({
     onNavigate(destination);
     setMobileMenuOpen(false);
   };
-
-  const navItems = [
-    { id: 'home', label: 'Home', icon: Home, destination: 'home' },
-    { id: 'registry', label: 'Browse', icon: LayoutGrid, destination: 'listings' },
-    { id: 'report', label: 'Report', icon: PlusCircle, destination: 'report' },
-    { id: 'memory-match', label: 'Play', icon: Sparkles, destination: 'memory-match' },
-  ];
-
   const isActive = (id: string) => {
     if (id === 'registry') {
       return currentPage === 'registry' || currentPage === 'find';
@@ -176,27 +167,6 @@ export const Navbar: React.FC<Props> = ({
           </div>
         )}
       </header>
-
-      <nav className="mobile-bottom-nav" aria-label="Quick navigation">
-        {navItems.map(({ id, label, icon: Icon, destination }) => {
-          const active = isActive(id);
-
-          return (
-            <button
-              key={id}
-              type="button"
-              onClick={() => handleNavClick(destination)}
-              className={`mobile-bottom-nav-item ${active ? 'is-active' : ''}`}
-              aria-current={active ? 'page' : undefined}
-            >
-              <span className="mobile-bottom-nav-icon">
-                <Icon size={20} strokeWidth={active ? 2.3 : 1.8} />
-              </span>
-              <span>{label}</span>
-            </button>
-          );
-        })}
-      </nav>
-    </>
+       </>
   );
 };

@@ -2,7 +2,7 @@
 
 > **“Lost here. Found somewhere.”**
 
-ELSEWHERE is a cinematic, competition-ready campus lost-and-found web application connecting students, faculty, and campus security. Built with a dreamy independent film aesthetic, elegant editorial typography, procedural 3D hero objects, explainable descriptive retrieval (Memory Match), persistent photo uploads, authenticated claims workflows, and Supabase PostgreSQL.
+ELSEWHERE is a  campus lost-and-found web application connecting students, faculty, and campus security. Built with elegant editorial typography, procedural 3D hero objects, explainable descriptive retrieval (Memory Match), persistent photo uploads, authenticated claims workflows, and Supabase PostgreSQL.
 
 ---
 
@@ -16,23 +16,8 @@ ELSEWHERE is a cinematic, competition-ready campus lost-and-found web applicatio
 - **Editorial Typography:** Cormorant Garamond serif headlines paired with crisp Inter sans-serif body text.
 - **Atmospheric Visuals:** Restrained transitions, subtle film grain, and deliberate spatial composition.
 
----
 
-## 2. Creative Constraint Compliance: Zero AI Pictures
-
-- **No AI-generated imagery:** Every decorative visual is constructed purely with code:
-  - Procedural Three.js / React Three Fiber geometry:
-    - *Over-ear headphones* with cushioned headband, metallic pivot rings, and acoustic earcups.
-    - *Keyring with keys* featuring split torus rings, brass and silver notched keys, and debossed campus fob.
-    - *Student ID card* with lanyard punch slot, magnetic stripe, and layout geometry.
-    - *Closed notebook* with forest green hardcover, spine curve, and rust silk bookmark.
-    - *Reusable water bottle* with powdercoat sage finish, base rim, and steel carry loop cap.
-  - Category placeholders render original SVG linework and delicate borders when an item has no user photo.
-  - Real user-uploaded photographs (up to 5 MB; JPEG, PNG, WebP) are fully supported with validation and previews.
-
----
-
-## 3. Architecture & Features
+## 2. Architecture & Features
 
 ### A. Navigation
 - Sticky header with wordmark, active section links (`LISTINGS`, `MEMORY MATCH`, `REPORT`), real-time backend connection status pill, and student authentication modal.
@@ -81,7 +66,7 @@ ELSEWHERE is a cinematic, competition-ready campus lost-and-found web applicatio
 
 ---
 
-## 4. Local Development
+## 3. Local Development
 
 ### Prerequisites
 - Node.js 18+ (tested on Node v24)
@@ -106,42 +91,7 @@ npm run build
 npm run preview
 ```
 
----
-
-## 5. Direct Netlify Deployment (No GitHub Required)
-
-ELSEWHERE is configured to deploy directly to Netlify without requiring a Git repository.
-
-### Option A: Netlify Drop (Drag & Drop)
-1. Run the local build command:
-   ```bash
-   npm run build
-   ```
-2. Locate the generated `dist` folder:
-   ```
-   C:\Users\Admin\.gemini\antigravity\scratch\elsewhere\dist
-   ```
-3. Open your browser and go to [app.netlify.com/drop](https://app.netlify.com/drop).
-4. Drag and drop the `dist` folder into the Netlify Drop target area.
-5. Netlify will deploy your application immediately. The included `dist/_redirects` and `netlify.toml` ensure single-page application routing (`/* -> /index.html 200`) works across all page refreshes.
-
-### Option B: Netlify CLI
-```bash
-npm install -g netlify-cli
-netlify deploy --prod --dir=dist
-```
-
-### Configuring Environment Variables in Netlify
-To connect a shared Supabase database in production:
-1. In Netlify, navigate to **Site configuration > Environment variables**.
-2. Add the following public variables:
-   - `VITE_SUPABASE_URL`: Your Supabase project URL (e.g. `https://xyzcompany.supabase.co`)
-   - `VITE_SUPABASE_ANON_KEY`: Your Supabase public anonymous key (`anon` `public`)
-3. Trigger a redeploy. The app will automatically switch from local demo mode to live Supabase PostgreSQL and Storage!
-
----
-
-## 6. Supabase Database & Storage Setup
+## 4. Supabase Database & Storage Setup
 
 A complete PostgreSQL schema script with Row Level Security (RLS) is provided in `supabase/schema.sql`.
 
@@ -164,7 +114,7 @@ A complete PostgreSQL schema script with Row Level Security (RLS) is provided in
 
 ---
 
-## 7. Verification Test Report
+## 5. Verification Test Report
 
 Run `npm test` to execute the automated verification test suite:
 

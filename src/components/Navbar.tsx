@@ -1,10 +1,8 @@
-
 import React, { useState } from 'react';
 import {
   User,
   Menu,
   X,
-  Database,
   Sparkles,
   PlusCircle,
   Home,
@@ -12,8 +10,6 @@ import {
   LayoutGrid,
 } from 'lucide-react';
 import { UserProfile } from '../types';
-import { isSupabaseConfigured } from '../lib/supabase';
-
 interface Props {
   currentUser: UserProfile | null;
   onOpenAuth: () => void;
@@ -144,16 +140,6 @@ export const Navbar: React.FC<Props> = ({
             >
               <User size={17} />
               {currentUser ? 'Your account' : 'Sign in / Register'}
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                onOpenStatusModal();
-                setMobileMenuOpen(false);
-              }}
-            >
-              <Database size={17} />
-              {isSupabaseConfigured ? 'Backend status' : 'Connection status'}
             </button>
             <button
               type="button"

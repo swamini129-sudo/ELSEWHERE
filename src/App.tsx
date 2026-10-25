@@ -105,12 +105,13 @@ export const App: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col bg-ivory text-charcoal selection:bg-forest selection:text-ivory overflow-x-hidden">
       {/* Persistent Navigation */}
-      <Navbar
-        currentUser={currentUser}
-        onOpenAuth={() => setAuthModalOpen(true)}
-        onOpenStatusModal={() => setStatusModalOpen(true)}
-        onNavigate={handleNavigate}
-      />
+    <Navbar
+  currentUser={currentUser}
+  currentPage={page}
+  onOpenAuth={() => setAuthModalOpen(true)}
+  onOpenStatusModal={() => setStatusModalOpen(true)}
+  onNavigate={handleNavigate}
+/>
 
       <main className="flex-grow min-h-[70vh]">
         {/* Homepage */}

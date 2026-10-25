@@ -26,7 +26,7 @@ export const Footer: React.FC<Props> = ({ onNavigate }) => {
           </p>
 
           <p className="text-xs text-ivory/60 max-w-sm leading-relaxed font-light">
-            A cinematic campus lost-and-found utility platform connecting
+            A campus lost-and-found utility platform connecting
             students, faculties and campus facilities to safeguard and reunite
             misplaced possessions.
           </p>
